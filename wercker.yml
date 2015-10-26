@@ -3,16 +3,12 @@ box: rocker/hadleyverse
 build:
   steps:
     - script:
-        name: Install curl
+        name: Install libraries and packages
         code: |
           printf "deb http://httpredir.debian.org/debian testing main\ndeb http://httpredir.debian.org/debian testing-updates main\ndeb http://security.debian.org testing/updates main\ndeb-src http://http.debian.net/debian testing main\n" > /etc/apt/sources.list
           apt-get update
-          apt-get install -y --no-install-recommends curl
-    - script:
-        name: Update Packages
-        code: |
-          Rscript -e "#update.packages(ask = FALSE)"
-          Rscript -e "install.packages('jsonlite', repos='https://cran.rstudio.com')"
+          apt-get install -y --no-install-recommends curl libgdal-dev libgeos-dev
+          Rscript -e "install.packages(c('jsonlite','rgdal','rgeos'), repos='https://cran.rstudio.com')"
     - script: 
         name: Get scores
         code: |
