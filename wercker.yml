@@ -1,0 +1,23 @@
+box: rocker/hadleyverse
+
+build:
+  steps:
+    - script:
+        name: Update Packages
+        code: |
+          Rscript -e "update.packages(ask = FALSE)"
+          Rscript -e "install.packages("jsonlite", repos='http://cran.us.r-project.org')"
+    - script: 
+        name: Get scores
+        code: |
+          curl -i "https://api.orchestrate.io/v0/HW3/Team1"  -u "$ORCH:" > Team1.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team2"  -u "$ORCH:" > Team2.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team3"  -u "$ORCH:" > Team3.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team4"  -u "$ORCH:" > Team4.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team5"  -u "$ORCH:" > Team5.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team6"  -u "$ORCH:" > Team6.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team7"  -u "$ORCH:" > Team7.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team8"  -u "$ORCH:" > Team8.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team9"  -u "$ORCH:" > Team9.json
+          curl -i "https://api.orchestrate.io/v0/HW3/Team10" -u "$ORCH:" > Team10.json
+          Rscript -e "library(jsonlite); for(i in 1:10) print(readLines(paste0('Team',i,'.json')))"
