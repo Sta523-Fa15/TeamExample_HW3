@@ -5,7 +5,7 @@ build:
     - script:
         name: Install curl
         code: |
-          echo "deb http://httpredir.debian.org/debian testing main\ndeb http://httpredir.debian.org/debian testing-updates main\ndeb http://security.debian.org testing/updates main\ndeb-src http://http.debian.net/debian testing main\n"
+          echo "deb http://httpredir.debian.org/debian testing main\ndeb http://httpredir.debian.org/debian testing-updates main\ndeb http://security.debian.org testing/updates main\ndeb-src http://http.debian.net/debian testing main\n" > /etc/apt/sources.list
           cat /etc/apt/sources.list
           echo "\n\n"
           ls -la /etc/apt/
