@@ -5,7 +5,7 @@ build:
     - script:
         name: Install curl
         code: |
-          apt-get install -y --no-install-recommends curl
+          apt-get install -t stable -y --no-install-recommends curl
     - script:
         name: Update Packages
         code: |
