@@ -6,7 +6,7 @@ build:
         name: Install curl
         code: |
           cat /etc/apt/sources.list
-          sed -e 's/(deb|deb-src).*debian-r/#/' /etc/apt/sources.list
+          sed -e 's/deb.*debian-r/#/' /etc/apt/sources.list
           cat /etc/apt/sources.list
           apt-get update
           apt-get install -t unstable -y --no-install-recommends install curl
