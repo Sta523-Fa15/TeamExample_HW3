@@ -6,7 +6,7 @@ build:
         name: Update Packages
         code: |
           Rscript -e "#update.packages(ask = FALSE)"
-          Rscript -e "install.packages("jsonlite", repos='https://cran.rstudio.com')"
+          Rscript -e "install.packages('jsonlite', repos='https://cran.rstudio.com')"
     - script: 
         name: Get scores
         code: |
