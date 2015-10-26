@@ -26,4 +26,4 @@ build:
           curl -s "https://api.orchestrate.io/v0/HW3/Team8"  -u "$ORCH:" > Team8.json
           curl -s "https://api.orchestrate.io/v0/HW3/Team9"  -u "$ORCH:" > Team9.json
           curl -s "https://api.orchestrate.io/v0/HW3/Team10" -u "$ORCH:" > Team10.json
-          Rscript -e "library(jsonlite); for(i in 1:10) print(readLines(paste0('Team',i,'.json')))"
+          Rscript -e "library(jsonlite); for(i in 1:10) print(fromJSON(paste0('Team',i,'.json')))"
