@@ -5,7 +5,8 @@ build:
     - script:
         name: Install curl
         code: |
-          cat /etc/apt/sources.list
+          cat /etc/apt/sources.list.d/debian-unstable.list
+          cat "\n\n\n"
           sed -e 's/deb.*debian-r/#/' /etc/apt/sources.list
           cat /etc/apt/sources.list
           apt-get update
