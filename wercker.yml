@@ -3,6 +3,10 @@ box: rocker/hadleyverse
 build:
   steps:
     - script:
+        name: Install curl
+        code: |
+          apt-get install curl
+    - script:
         name: Update Packages
         code: |
           Rscript -e "#update.packages(ask = FALSE)"
