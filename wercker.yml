@@ -5,7 +5,8 @@ build:
     - script:
         name: Install curl
         code: |
-          apt-get install curl
+          apt-get update
+          apt-get install -t unstable -y --no-install-recommends install curl
     - script:
         name: Update Packages
         code: |
