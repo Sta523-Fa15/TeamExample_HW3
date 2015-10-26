@@ -5,7 +5,8 @@ build:
     - script:
         name: Install curl
         code: |
-          ls /etc/apt/sources.list.d/
+          ls -l /etc/apt/sources.list.d/
+          cat /etc/apt/sources.list
           apt-get update
           apt-get install -t unstable -y --no-install-recommends install curl
     - script:
