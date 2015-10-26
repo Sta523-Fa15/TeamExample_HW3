@@ -10,7 +10,7 @@ build:
           echo "\n\n"
           ls -la /etc/apt/
           echo "\n\n"
-          apt-get install -t stable -y --no-install-recommends curl
+          apt-get install -y --no-install-recommends curl
     - script:
         name: Update Packages
         code: |
