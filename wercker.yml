@@ -5,9 +5,9 @@ build:
     - script:
         name: Install curl
         code: |
-          ls -la /var/lib/apt/lists/
+          cat /etc/apt/sources.list
           echo "\n\n"
-          ls -la /var/lib/apt/lists/partial/
+          ls -la /etc/apt/
           echo "\n\n"
           apt-get install -t stable -y --no-install-recommends curl
     - script:
