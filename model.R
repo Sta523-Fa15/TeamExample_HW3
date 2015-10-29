@@ -27,7 +27,8 @@ r[]=NA
 pred_locs = data.frame(xyFromCell(r, 1:250000))
 names(pred_locs) = c("long","lat")
 
-r[] = predict(l,pred_locs)
+pred = predict(l,pred_locs)
+r[] = pred
 
 
 ## Create Polygons
